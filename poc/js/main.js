@@ -19,7 +19,7 @@
     });
     
     // set it to the image's dimensions
-    canvas.setWidth(imgElement.width);
+    canvas.setWidth(imgElement.width)
     canvas.setHeight(imgElement.height);
     //  canvas.add(imgInstance);
     canvas.setBackgroundImage(imgInstance, canvas.renderAll.bind(canvas));
@@ -38,6 +38,18 @@
 
     // mouse:up stops the rectangle
     canvas.on('mouse:up', function(options) {
+        if (typeof options.target !== 'object') {
+            drawRect(options.e.clientX, options.e.clientY, 'end');
+        }
+    });
+
+    canvas.on('object:added', function(options) {
+        console.log(options);
+    })
+
+
+
+    canvas.on('touchstart', function(options) {
         if (typeof options.target !== 'object') {
             drawRect(options.e.clientX, options.e.clientY, 'end');
         }
