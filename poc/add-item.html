@@ -41,15 +41,34 @@
 
     <a href = "add-item.html">Add</a> | <a href = "view.html">View</a> | <a href = "annotate.html">Annotate</a>
 
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-      <input type="file" name="uploadedfile" accept="image/*" capture>
+    <form method="post" action ="/" enctype="multipart/form-data" id="addimage">
+      <input type="file" name="thefile" accept="image/*" capture>
       <input type="submit" value="Upload">
     </form>
+
 
         <!-- Add your site or application content here -->
 
         <script src="js/vendor/zepto.min.js"></script>
         <script src="js/helper.js"></script>
+
+
+        <script>
+        // submit handler for form
+        $("#addimage").submit(function(event) {
+            // stop normal submission.
+            event.preventDefault();
+            var $form = $(this),
+                term = $form.find( "input[name='thefile']").val();
+
+            // post dat ish
+            $.post("http://192.168.1.3:3000/images/", { thefile : term } );
+
+
+
+        });
+        </script>
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

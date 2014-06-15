@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require fabric-dev
 //= require_tree .
+//= require helper
+//= require plugins
+//= require modernizr-latest
+//= require zepto-dev
+

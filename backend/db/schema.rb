@@ -11,16 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530032159) do
+ActiveRecord::Schema.define(version: 20140615021426) do
 
-  create_table "images", force: true do |t|
-    t.string   "path"
+  create_table "boxes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
+    t.integer  "x_start"
+    t.integer  "x_end"
+    t.integer  "y_start"
+    t.integer  "y_end"
+    t.integer  "images_id"
+    t.integer  "image_id"
+  end
+
+  add_index "boxes", ["image_id"], name: "index_boxes_on_image_id"
+  add_index "boxes", ["images_id"], name: "index_boxes_on_images_id"
+
+  create_table "images", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "thefile_file_name"
+    t.string   "thefile_content_type"
+    t.integer  "thefile_file_size"
+    t.datetime "thefile_updated_at"
   end
 
 end

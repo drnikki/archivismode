@@ -19,5 +19,6 @@ module Backend
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    # skip_before_filter :verify_authenticity_token, :only => [:update]
   end
 end

@@ -10,10 +10,9 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :path %><br>
-    <%= f.text_field :path %>
+    <!-- @todo. test on mobile. -->
+    <%= f.file_field :thefile %>
   </div>
   <div class="actions">
     <%= f.submit %>

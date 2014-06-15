@@ -1,9 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Path:</strong>
-  <%= @image.path %>
-</p>
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+    <canvas id="drawing-canvas" onLoad>
+    	<!-- @todo, probably not the best place for this -->
+    	<img id ="testing-id" src ="<%=@image.thefile.url %>" onLoad="initCanvas();">
+    </canvas>
+
+
+    <!-- the form for adding notes to the rectangle -->
+    <div id ="note-form">
+        <form id="add-note">
+            <input type="hidden" id="canvas-data">
+            <textarea id ="note-text"> </textarea>
+            <button type="button" />
+        </form>
+    </div>
+
+
+<!--
+<%= image_tag @image.thefile.url(:medium) %>
+<%= image_tag @image.thefile.url(:thumb) %>
+-->
+<p>
+	<%= link_to 'Edit', edit_image_path(@image) %> |
+	<%= link_to 'Back', images_path %>
+</p>
