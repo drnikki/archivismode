@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615021426) do
+ActiveRecord::Schema.define(version: 20140615015735) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "boxes", force: true do |t|
     t.datetime "created_at"
@@ -20,12 +23,10 @@ ActiveRecord::Schema.define(version: 20140615021426) do
     t.integer  "x_end"
     t.integer  "y_start"
     t.integer  "y_end"
-    t.integer  "images_id"
     t.integer  "image_id"
   end
 
-  add_index "boxes", ["image_id"], name: "index_boxes_on_image_id"
-  add_index "boxes", ["images_id"], name: "index_boxes_on_images_id"
+  add_index "boxes", ["image_id"], name: "index_boxes_on_image_id", using: :btree
 
   create_table "images", force: true do |t|
     t.datetime "created_at"
