@@ -10,6 +10,7 @@
   <tbody>
     <% @boxes.each do |box| %>
       <tr>
+        <td>Box ID: <%= box.id %></td>
         <td><%= link_to 'Show', image_box_path(@image, box) %></td>
         <td><%= link_to 'Edit', edit_image_box_path(@image, box) %></td>
         <td><%= link_to 'Destroy', [@image, box], method: :delete, data: { confirm: 'Are you sure?' } %></td>
