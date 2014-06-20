@@ -20,5 +20,7 @@ module Backend
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     # skip_before_filter :verify_authenticity_token, :only => [:update]
+
+    config.serve_static_assets = true;
   end
 end
