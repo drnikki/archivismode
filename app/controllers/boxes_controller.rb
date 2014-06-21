@@ -12,7 +12,7 @@ class BoxesController < ApplicationController
   # GET /boxes/1
   # GET /boxes/1.json
   def show
-    @box = @image.boxes.find(params[:image_id])
+    @box = @image.boxes.find(params[:id])
   end
 
   # GET /boxes/new
@@ -73,7 +73,7 @@ class BoxesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def box_params
-      params.require(:box).permit(:x_start, :x_end, :y_start, :y_end)
+      params.require(:box).permit(:x_start, :x_end, :y_start, :y_end, :note)
     end
 
     # load the parent... from https://gist.github.com/jhjguxin/3074080

@@ -11,6 +11,7 @@ function initCanvas() {
     });
 
     var imgElement = document.getElementById('testing-id');
+
     var imgInstance = new fabric.Image(imgElement, {
         left: 0,
         top: 0,
@@ -50,8 +51,7 @@ function initCanvas() {
         bossthing.populateForm();
     })
 
-
-
+    // it's everything!
     var Guardian = function () {
         this.form = document.getElementById('note-form');
     }
@@ -64,9 +64,10 @@ function initCanvas() {
         this.box.width = options.target.currentWidth;
         this.box.left = options.target.left;
         this.box.top = options.target.top;
-        console.log(this);
+        console.log(this.box);
     }
 
+    // show that form, obvs.
     Guardian.prototype.showForm = function(dir) {
         if (dir = 1) {
             this.form.style.display = 'block';
@@ -76,19 +77,24 @@ function initCanvas() {
         }
     }
 
+    // fill the form with the hidden data
     Guardian.prototype.populateForm = function() {
-        hidden = document.getElementById('canvas-data');
-        hidden.value = JSON.stringify(this.box);
+        x_start = document.getElementById('box_x_start');
+        x_start.value = this.box.top;
+        y_start = document.getElementById('box_y_start');
+        y_start.value = this.box.left;
+
+        x_end = document.getElementById('box_x_end');
+        x_end.value = this.box.height + this.box.top;
+        y_end = document.getElementById('box_y_end');
+        y_end.value = this.box.width +  this.box.left;
     }
 
 
 
-
-
-
 /**
-    Useful stuff
-**/
+ *  Utilities - draw the rectangle on canvas.
+ */
     function drawRect(x, y, dir) {
         if (dir == 'start' ) {
             drawRect.startX = x;

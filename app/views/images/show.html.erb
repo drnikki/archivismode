@@ -7,14 +7,22 @@
     </canvas>
 
 
-    <!-- the form for adding notes to the rectangle -->
-    <div id ="note-form">
-        <form id="add-note">
-            <input type="hidden" id="canvas-data">
-            <textarea id ="note-text"> </textarea>
-            <button type="button" />
-        </form>
-    </div>
+
+
+        <div id ="note-form">
+            <form id="new_box" action="boxes/new" data-remote-"true" method="post">
+                <input type="hidden" id="box_x_start" name="box[x_start]">
+                <input type="hidden" id="box_y_start" name="box[y_start]">
+                <input type="hidden" id="box_x_end" name="box[x_end]">
+                <input type="hidden" id="box_y_end" name="box[y_end]">
+
+                <input type="hidden" id="image-id" value="<%=@image.id %>">
+                <textarea id ="note"> </textarea>
+                <button type="button">&#10004;</button><!-- &#10003; for heavier -->
+
+
+            </form>
+        </div>
 
 
 <!--
@@ -22,6 +30,20 @@
 <%= image_tag @image.thefile.url(:thumb) %>
 -->
 <p>
-	<%= link_to 'Edit', edit_image_path(@image) %> |
+	<%= link_to 'Edit Image', edit_image_path(@image) %> |
 	<%= link_to 'Back', images_path %>
 </p>
+
+<div>
+    <p>Here are the boxes for this image</p>
+    <table>
+        <% @boxes.each do |box| %>
+          <tr>
+            <td>Box ID: <%= box.id %></td>
+            <td><%= link_to 'Show', image_box_path(@image, box) %></td>
+            <td><%= link_to 'Edit', edit_image_box_path(@image, box) %></td>
+            <td><%= link_to 'Destroy', [@image, box], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+    </table>
+</div>

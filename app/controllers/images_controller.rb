@@ -10,6 +10,7 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
+    @boxes = @image.boxes
   end
 
   # GET /images/new
