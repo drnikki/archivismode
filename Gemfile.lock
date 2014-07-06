@@ -69,6 +69,10 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.1)
+    pg_search (0.7.4)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -134,6 +138,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 4.1)
   pg
+  pg_search
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
