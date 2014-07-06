@@ -29,6 +29,3 @@ gem 'spring',        group: :development
 # handling files and getting them up on to the internet
 gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
-
-# search?
-gem 'pg_search'

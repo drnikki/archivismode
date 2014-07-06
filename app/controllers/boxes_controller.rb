@@ -1,24 +1,12 @@
 class BoxesController < ApplicationController
   before_action :set_box, only: [:show, :edit, :update, :destroy]
 
- # before_filter :load_image
+  before_filter :load_image
 
   # GET /boxes
   # GET /boxes.json
   def index
-    if params[:q]
-      @boxes = Box.search(params[:q])
-    else
-      @boxes =  @image.boxes
-
-    end
-  end
-
-  # GET /search
-  # for finding boxes.
-  def search
-
-
+     @boxes = @image.boxes
   end
 
   # GET /boxes/1
