@@ -3,22 +3,22 @@
 
     <canvas id="drawing-canvas" onLoad>
     	<!-- @todo, probably not the best place for this -->
+        <!--<img id ="testing-id" src ="https://33.media.tumblr.com/fd7fb94e31f080be968d4f7ee4266f96/tumblr_n8b0my2HcX1qz581wo1_1280.jpg" onLoad="initCanvas();">-->
+
     	<img id ="testing-id" src ="<%=@image.thefile.url %>" onLoad="initCanvas();">
     </canvas>
 
-
-
-
+<!-- todo make this a real rails form -->
         <div id ="note-form">
-            <form id="new_box" action="boxes/new" data-remote-"true" method="post">
+            <form id="new_box" action="<%= @image.id %>/boxes" data-remote-"true" method="post">
                 <input type="hidden" id="box_x_start" name="box[x_start]">
                 <input type="hidden" id="box_y_start" name="box[y_start]">
                 <input type="hidden" id="box_x_end" name="box[x_end]">
                 <input type="hidden" id="box_y_end" name="box[y_end]">
 
                 <input type="hidden" id="image-id" value="<%=@image.id %>">
-                <textarea id ="note"> </textarea>
-                <button type="button">&#10004;</button><!-- &#10003; for heavier -->
+                <textarea id ="box_note" name="box[note]"> </textarea>
+                <input type ="submit"> <!-- &#10003; for heavier -->
 
 
             </form>

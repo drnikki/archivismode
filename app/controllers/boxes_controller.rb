@@ -33,10 +33,12 @@ class BoxesController < ApplicationController
     respond_to do |format|
       if @box.save
         format.html { redirect_to [@image, @box], notice: 'Box was successfully created.' }
-        format.json { render :show, status: :created, location: @box }
+        #format.json { render :show, status: :created, location: @box }
+        format.json { render json: @box }
       else
         format.html { render :new }
-        format.json { render json: @box.errors, status: :unprocessable_entity }
+        #format.json { render json: @box.errors, status: :unprocessable_entity }
+        format.json { redner json: @box.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
@@ -47,10 +49,14 @@ class BoxesController < ApplicationController
     respond_to do |format|
       if @box.update(box_params)
         format.html { redirect_to [@image, @box], notice: 'Box was successfully updated.' }
-        format.json { render :show, status: :ok, location: @box }
+        # format.json { render :show, status: :ok, location: @box }
+        format.json { render json: @box }
+
       else
         format.html { render :edit }
-        format.json { render json: @box.errors, status: :unprocessable_entity }
+        # format.json { render json: @box.errors, status: :unprocessable_entity }
+        format.json { redner json: @box.errors.full_messages, status: :unprocessable_entity }
+
       end
     end
   end

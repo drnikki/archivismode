@@ -44,6 +44,7 @@ function initCanvas() {
         }
     });
 
+    // YO. heavy lifting.
     canvas.on('object:added', function(options) {
         var bossthing = new Guardian;
         bossthing.setRectangle(options);
@@ -92,6 +93,8 @@ function initCanvas() {
 
 
 
+
+
 /**
  *  Utilities - draw the rectangle on canvas.
  */
@@ -113,4 +116,12 @@ function initCanvas() {
             canvas.add(rect);
         }   
     }
+
+    // form submit handler
+   $('#newbox').submit(function(event) {
+    console.log('wat');
+    console.log(event.data);
+
+   });
+
 }
