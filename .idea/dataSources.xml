@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2469981183">
+    <data-source source="LOCAL" name="Rails archivismode: development" uuid="0f7e83dc-b031-4eff-b599-15f347ed939f">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:db/arch)_dev</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails archivismode: test" uuid="b393ee65-f968-4aab-bf6c-208fa6fc1b4a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:db/arch_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails archivismode: production" uuid="139047e6-67e4-47d5-9434-e03fe872a287">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:db/arch_prod</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
